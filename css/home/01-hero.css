@@ -83,6 +83,7 @@
 
 .brand-img {
   width: 80px;
+  height: auto;
 }
 
 /* Navigation desktop */
@@ -360,6 +361,7 @@
   .btn {
     width: 100%;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -451,5 +453,122 @@
 }
 
 
+/* ======================================================
+   HERO – MOBILE REFINEMENT
+====================================================== */
+
+@media (max-width: 768px) {
+
+  /* HERO GRID ADAPTATION */
+  .hero {
+    grid-template-rows: auto 1fr auto;
+    text-align: center;
+  }
+
+  /* HEADER */
+  .hero-header {
+    padding: .9rem 1.2rem;
+  }
+
+  .brand-img {
+    width: 60px;
+  }
+
+  /* CONTENT CENTERING */
+  .hero-content {
+    align-items: center;
+    max-width: 100%;
+    gap: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: .65rem;
+    letter-spacing: .4em;
+  }
+
+  .hero-title {
+    line-height: 1.1;
+  }
+
+  /* CTA MOBILE */
+  .hero-cta {
+    margin-top: 1.2rem;
+  }
+
+  .hero-cta .btn {
+    padding: .95rem 1.8rem;
+  }
+
+  /* STATS MOBILE – REACTIVATED */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding-top: 1.8rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+  }
+
+  .hero-stats .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .hero-stats .stat-label {
+    font-size: .6rem;
+    letter-spacing: .2em;
+  }
+}
+
+/* ======================================================
+   MOBILE MENU – POLISH
+====================================================== */
+
+@media (max-width: 768px) {
+
+  .mobile-menu {
+    padding: 3rem 2rem;
+  }
+
+  .mobile-nav-list a {
+    font-size: .85rem;
+    letter-spacing: .25em;
+    color: var(--light-text);
+    text-decoration: none;
+  }
+
+  .mobile-nav-list li:nth-child(1) { animation-delay: .05s; }
+  .mobile-nav-list li:nth-child(2) { animation-delay: .1s; }
+  .mobile-nav-list li:nth-child(3) { animation-delay: .15s; }
+  .mobile-nav-list li:nth-child(4) { animation-delay: .2s; }
+
+  .mobile-menu .hero-socials {
+    margin-top: 3rem;
+    gap: 1.4rem;
+  }
+}
+
+/* ======================================================
+   EXTRA SMALL DEVICES
+====================================================== */
+
+@media (max-width: 420px) {
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-cta .btn {
+    font-size: .7rem;
+    letter-spacing: .2em;
+  }
+
+  .brand-img {
+    width: 58px;
+  }
+}
 
 
