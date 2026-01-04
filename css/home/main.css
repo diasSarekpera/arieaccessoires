@@ -4,8 +4,11 @@
 /* ===== STYLES DE BASE / TYPOGRAPHIE / GLOBAL ===== */
 @import url("../global/02-base.css");
 
-/* ===== STYLES DE BASE / TYPOGRAPHIE / GLOBAL ===== */
+/* ===== INTERACTION ===== */
 @import url("../global/reveal.css");
+
+/*=======WHATSAPP========*/
+@import url("../global/whatsapp-icon.css");
 
 /* ===== SECTION HERO (Page d'accueil) ===== */
 @import url("../home/01-hero.css");
