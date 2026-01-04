@@ -1,0 +1,342 @@
+/* =========================
+   CATEGORIES SECTION – LUXE
+   ========================= */
+.categories {
+  position: relative;
+  padding: 7rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background: linear-gradient(
+    to bottom,
+    #faf7f8,
+    #ffffff
+  );
+  color: var(--dark-text);
+  overflow: hidden;
+}
+
+/* halo décoratif subtil */
+.categories::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 15%,
+    rgba(231,161,176,0.10),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+/* =========================
+   GRID
+   ========================= */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.8rem;
+}
+
+/* =========================
+   CATEGORY CARD – PREMIUM
+   ========================= */
+.category-card {
+  position: relative;
+  padding: 3.2rem 2.2rem;
+  min-height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.96),
+    rgba(255,255,255,0.88)
+  );
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+
+  transition:
+    transform .45s var(--ease-premium),
+    box-shadow .45s var(--ease-premium),
+    border-color .45s var(--ease-premium);
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      circle at 30% 0%,
+      rgba(231,161,176,0.12),
+      transparent 55%
+    );
+  opacity: 0;
+  transition: opacity .45s var(--ease-premium);
+  pointer-events: none;
+}
+
+.category-card:hover::after {
+  opacity: 1;
+}
+
+
+/* micro-ligne intérieure (inset border) */
+.category-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(231,161,176,0.18);
+  pointer-events: none;
+  transition: opacity .45s var(--ease-premium);
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(231,161,176,0.45);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.08),
+    0 12px 35px var(--rose-glow);
+}
+
+.category-card:hover::before {
+  opacity: 0.85;
+}
+
+/* =========================
+   DECORATIVE STARS
+   ========================= */
+.card-star {
+  position: absolute;
+  font-size: 0.55rem;
+  color: rgba(231,161,176,0.45);
+  opacity: 0.65;
+  pointer-events: none;
+  transition: opacity .35s ease, color .35s ease;
+}
+
+/* étoiles bien ancrées aux coins */
+.star-top-left {
+  top: 0.6rem;
+  left: 0.6rem;
+}
+
+.star-top-right {
+  top: 0.6rem;
+  right: 0.6rem;
+}
+
+.star-bottom-left {
+  bottom: 0.6rem;
+  left: 0.6rem;
+}
+
+.star-bottom-right {
+  bottom: 0.6rem;
+  right: 0.6rem;
+}
+
+.category-card:hover .card-star {
+  opacity: 0.9;
+  color: rgba(231,161,176,0.65);
+}
+
+.card-star {
+  position: absolute;
+  z-index: 3;
+  font-size: 0.8rem;
+  color: var(--rose-primary);
+  opacity: 0.85;
+  filter:
+    drop-shadow(0 0 4px rgba(231,161,176,0.6))
+    drop-shadow(0 0 10px rgba(231,161,176,0.25));
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.category-card:hover .card-star {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+
+/* =========================
+   CARD CONTENT
+   ========================= */
+.category-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+
+/* Icon */
+.category-icon {
+  font-size: 1.9rem;
+  color: var(--rose-primary);
+  margin-bottom: 0.5rem;
+}
+
+.category-icon {
+  transition:
+    transform .45s var(--ease-premium),
+    filter .45s ease;
+}
+
+.category-card:hover .category-icon {
+  transform: translateY(-6px) scale(1.08);
+  filter: drop-shadow(0 10px 18px rgba(231,161,176,.45));
+}
+
+
+/* Title */
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Description */
+.category-description {
+  max-width: 260px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.65);
+}
+
+/* =========================
+   SECTION CTA
+   ========================= */
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.section-cta .btn {
+  padding: 1.1rem 2.8rem;
+}
+
+.category-title {
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
+}
+
+.category-description {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+.card-star {
+  opacity: 0.55;
+  transform: scale(0.9);
+}
+
+.category-card:hover .card-star {
+  opacity: 0.85;
+}
+
+
+/* =========================
+   CATEGORIES – RESPONSIVE
+   ========================= */
+
+/* Écrans ≤ 1200px (tablette large / petit laptop) */
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+}
+
+/* Tablette */
+@media (max-width: 768px) {
+  .categories {
+    padding: 5rem 2rem;
+    gap: 3rem;
+  }
+
+  .categories-grid {
+    gap: 2rem;
+  }
+
+  .category-card {
+    padding: 2.6rem 1.8rem;
+    min-height: auto;
+  }
+
+  .category-description {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .categories {
+    padding: 4rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .category-card {
+    padding: 2.2rem 1.6rem;
+    border-radius: 16px;
+  }
+
+  /* Désactiver les effets hover inutiles sur mobile */
+  .category-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .category-card::before,
+  .category-card::after {
+    display: none;
+  }
+
+  /* Décors plus discrets */
+  .card-star {
+    opacity: 0.35;
+    transform: scale(0.8);
+    filter: none;
+  }
+
+  /* Texte */
+  .category-title {
+    font-size: 1.05rem;
+  }
+
+  .category-description {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .section-cta {
+    margin-top: 1.5rem;
+  }
+
+  .section-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+

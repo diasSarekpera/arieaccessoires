@@ -1,0 +1,42 @@
+/* ===== RESET / NORMALIZE ===== */
+@import url("../global/reset.css");
+
+/* ===== STYLES DE BASE / TYPOGRAPHIE / GLOBAL ===== */
+@import url("../global/02-base.css");
+
+/* ===== STYLES DE BASE / TYPOGRAPHIE / GLOBAL ===== */
+@import url("../global/reveal.css");
+
+/* ===== SECTION HERO (Page d'accueil) ===== */
+@import url("../home/01-hero.css");
+
+/* ===== SECTION CATEGORIES ===== */
+@import url("./02-categories.css");
+
+/* ===== SECTION FUTURED PRODUCT ===== */
+@import url("./03-featured-products.css");
+
+/* ===== SECTION WHY CHOOSE US ===== */
+@import url("./04-why-choose-us.css");
+
+/* ===== SECTION À PROPOS / ABOUT ===== */
+@import url("./05-about.css");
+
+/* ===== SECTION QUOTE / VISION ===== */
+@import url("./06-quote.css");
+
+/* ===== SECTION TESTIMONIALS / TÉMOIGNAGES ===== */
+@import url("./07-testimonials.css");
+
+/* ===== SECTION CONTACT ===== */
+@import url("./08-contact.css");
+
+/* ===== FOOTER ===== */
+@import url("./09-footer.css");
+
+
+
+
+
+
+
