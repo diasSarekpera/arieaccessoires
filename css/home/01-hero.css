@@ -665,3 +665,53 @@
 }
 
 
+
+/* ======================================================
+   BURGER – PERFECT CROSS FIX (MOBILE)
+====================================================== */
+
+@media (max-width: 768px) {
+
+  /* Reset spacing pour un calcul propre */
+  .burger-btn span {
+    margin-bottom: 4px;
+    transform-origin: center;
+  }
+
+  /* Croix parfaitement centrée */
+  .burger-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .burger-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* ======================================================
+   EXTRA SMALL DEVICES – MICRO ADJUST
+====================================================== */
+
+@media (max-width: 420px) {
+
+  .burger-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .burger-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}
+
+
+
+
+
+
+
+
+
