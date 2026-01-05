@@ -459,12 +459,6 @@
 
 @media (max-width: 768px) {
 
-  /* HERO GRID ADAPTATION */
-  .hero {
-    grid-template-rows: auto 1fr auto;
-    text-align: center;
-  }
-
   /* HEADER */
   .hero-header {
     padding: .9rem 1.2rem;
@@ -474,12 +468,6 @@
     width: 60px;
   }
 
-  /* CONTENT CENTERING */
-  .hero-content {
-    align-items: center;
-    max-width: 100%;
-    gap: 1.8rem;
-  }
 
   .hero-subtitle {
     font-size: .65rem;
@@ -499,28 +487,6 @@
     padding: .95rem 1.8rem;
   }
 
-  /* STATS MOBILE – REACTIVATED */
-  .hero-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-    padding-top: 1.8rem;
-  }
-
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-    gap: .3rem;
-  }
-
-  .hero-stats .stat-number {
-    font-size: 1.6rem;
-  }
-
-  .hero-stats .stat-label {
-    font-size: .6rem;
-    letter-spacing: .2em;
-  }
 }
 
 /* ======================================================
@@ -570,5 +536,76 @@
     width: 58px;
   }
 }
+
+
+/* ======================================================
+   HERO – MOBILE FIX (ADD ONLY)
+====================================================== */
+
+@media (max-width: 768px) {
+
+  /* Cache complètement les stats sur mobile */
+  .hero-stats {
+    display: none !important;
+  }
+
+  /* Rééquilibrage global du hero */
+  .hero {
+    min-height: 100vh;
+    padding: 1.8rem 1.4rem;
+    grid-template-rows: auto 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Contenu centré et plus lisible */
+  .hero-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: .6rem;
+    letter-spacing: .35em;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    line-height: 1.15;
+  }
+
+  /* CTA plus confortables au toucher */
+  .hero-cta {
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* ======================================================
+   EXTRA SMALL DEVICES – FINAL POLISH
+====================================================== */
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtitle {
+    font-size: .55rem;
+  }
+}
+
+
 
 
