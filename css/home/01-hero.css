@@ -468,7 +468,6 @@
     width: 60px;
   }
 
-
   .hero-subtitle {
     font-size: .65rem;
     letter-spacing: .4em;
@@ -560,8 +559,7 @@
   /* Contenu centré et plus lisible */
   .hero-content {
     max-width: 100%;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
     gap: 1.8rem;
   }
 
@@ -607,5 +605,63 @@
 }
 
 
+/* ======================================================
+   HEADER – MOBILE OPTIMIZATION
+====================================================== */
+
+@media (max-width: 768px) {
+
+  /* Header plus compact et mobile-friendly */
+  .hero-header {
+    padding: .7rem 1rem;
+    border-radius: 14px;
+    align-items: center;
+  }
+
+  /* Zone logo maîtrisée */
+  .hero-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo réduit de manière idéale */
+  .brand-img {
+    width: 52px;
+    max-width: 52px;
+    height: auto;
+  }
+
+  /* Burger mieux proportionné */
+  .burger-btn {
+    width: 26px;
+    height: 18px;
+  }
+
+  .burger-btn span {
+    height: 2px;
+    margin-bottom: 4px;
+  }
+}
+
+/* ======================================================
+   EXTRA SMALL DEVICES – HEADER FINAL TUNE
+====================================================== */
+
+@media (max-width: 420px) {
+
+  .hero-header {
+    padding: .6rem .9rem;
+  }
+
+  .brand-img {
+    width: 46px;
+    max-width: 46px;
+  }
+
+  .burger-btn {
+    width: 24px;
+    height: 16px;
+  }
+}
 
 
