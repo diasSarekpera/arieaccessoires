@@ -633,7 +633,6 @@
 
   /* Burger mieux proportionné */
   .burger-btn {
-    width: 26px;
     height: 18px;
   }
 
@@ -710,6 +709,63 @@
 
 
 
+/* ======================================================
+   BURGER – GEOMETRIC PERFECT FIX (FINAL)
+====================================================== */
+
+@media (max-width: 768px) {
+
+  .burger-btn {
+    position: relative;
+    width: 26px;
+    height: 18px;
+  }
+
+  .burger-btn span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin: 0; /* IMPORTANT */
+    background: #fff;
+    border-radius: 2px;
+    transition: transform .35s var(--ease-premium),
+                opacity .25s var(--ease-premium);
+  }
+
+  /* Position exacte des barres */
+  .burger-btn span:nth-child(1) { top: 0; }
+  .burger-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+  .burger-btn span:nth-child(3) { bottom: 0; }
+
+  /* État ouvert → croix parfaite */
+  .burger-btn[aria-expanded="true"] span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .burger-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-btn[aria-expanded="true"] span:nth-child(3) {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+/* ======================================================
+   EXTRA SMALL DEVICES – MICRO SCALE
+====================================================== */
+
+@media (max-width: 420px) {
+
+  .burger-btn {
+    width: 24px;
+    height: 16px;
+  }
+}
 
 
 
