@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
+if (!("IntersectionObserver" in window)) {
+  document.querySelectorAll("[data-animate]").forEach(el => {
+    el.classList.add("animate-in");
+  });
+}
 

@@ -229,7 +229,7 @@
 
 /* =========================
    SECTION CTA
-   ========================= */
+========================= */
 
 .section-cta.align-center {
   display: flex;
@@ -372,13 +372,5 @@
     font-size: 0.8rem;
   }
 }
-
-
-.featured-products {
-  opacity: 1 !important;
-  visibility: visible !important;
-  min-height: 100vh;
-}
-
 
 
