@@ -1,0 +1,140 @@
+/* =========================
+   QUOTE / VISION – PREMIUM
+========================= */
+.quote {
+  position: relative;
+  padding: 7rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  background: linear-gradient(
+    to bottom,
+    #faf7f8,
+    #ffffff
+  );
+}
+
+/* =========================
+   QUOTE CONTENT
+   ========================= */
+.quote-content {
+  max-width: 900px;
+
+  position: relative;
+  padding-left: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+
+  border-left: 2px solid rgba(231,161,176,0.35);
+}
+
+/* =========================
+   QUOTE TEXT
+   ========================= */
+.quote-text {
+  margin: 0;
+}
+
+.quote-text p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.6;
+
+  letter-spacing: -0.01em;
+  color: rgba(0,0,0,0.8);
+}
+
+/* =========================
+   QUOTE AUTHOR
+   ========================= */
+.quote-author {
+  align-self: flex-start;
+}
+
+.quote-author cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(0,0,0,0.5);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 640px) {
+  .quote {
+    padding: 5rem 2rem;
+  }
+
+  .quote-content {
+    padding-left: 1.5rem;
+  }
+}
+
+
+/* =========================
+   QUOTE / VISION – RESPONSIVE IMPROVEMENTS
+   À AJOUTER À LA FIN
+   ========================= */
+
+/* ===== TABLETTE (≤ 1024px) ===== */
+@media (max-width: 1024px) {
+  .quote {
+    padding: 6rem 3rem;
+  }
+
+  .quote-content {
+    max-width: 100%;
+    padding-left: 2rem;
+  }
+}
+
+/* ===== MOBILE LARGE (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .quote {
+    padding: 5rem 2rem;
+    gap: 3rem;
+  }
+
+  .quote-content {
+    padding-left: 1.6rem;
+    gap: 1.8rem;
+  }
+
+  .quote-text p {
+    font-size: 1.3rem;
+    line-height: 1.55;
+  }
+}
+
+/* ===== PETITS MOBILES (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .quote {
+    padding: 4rem 1.4rem;
+  }
+
+  .quote-content {
+    padding-left: 1.2rem;
+    border-left-width: 1.5px;
+  }
+
+  .quote-text p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .quote-author cite {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+
