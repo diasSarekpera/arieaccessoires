@@ -1,0 +1,53 @@
+/* RESET CSS */
+@import url("../global/reset.css");
+
+/*================
+   BASE
+==================*/
+@import url("./base.css");
+
+
+/* ==========================================================
+   MAIN CSS — PAGE PRODUITS
+   Ce fichier centralise tous les styles spécifiques
+   à la page "Produits"
+========================================================== */
+
+
+/* ===== 01. HEADER =====
+   - Logo
+   - Navigation principale
+   - Menu responsive
+*/
+@import url(./01-header.css);
+
+
+/* ===== 02. APRÈS HEADER =====
+   - Fil d’Ariane
+   - Titre de page
+   - Sous-titre
+*/
+@import url("./02-after-header.css");
+
+
+/* ===== 03. PRODUITS =====
+   - Barre de catégories (sticky)
+   - Sections : Bijoux, Montres, Sacs, Cosmétiques
+   - Grilles de produits
+*/
+@import url("./03-products.css");
+
+
+/* ===== 04. CITATION / MESSAGE =====
+   - Texte inspirationnel
+   - Bloc de mise en valeur (optionnel)
+*/
+@import url("./04-citation.css");
+
+
+/* ===== 05. FOOTER =====
+   - Liens
+   - Infos légales
+   - Réseaux sociaux
+*/
+@import url("./05-footer.css");

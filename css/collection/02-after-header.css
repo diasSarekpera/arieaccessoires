@@ -1,0 +1,94 @@
+/* ==========================================================
+   AFTER HEADER — FIL D’ARIANE + TITRE DE PAGE
+   Design moderne, épuré, professionnel
+   ========================================================== */
+
+/* ===== VARIABLES (si tu n'en as pas déjà) ===== */
+:root {
+    --container-width: 1200px;
+
+    --text-main: #111111;
+    --text-muted: #6b7280;
+
+    --accent: #111111;
+
+    --bg-page: #ffffff;
+}
+
+/* ==========================================================
+   FIL D’ARIANE
+   ========================================================== */
+.breadcrumb {
+    max-width: var(--container-width);
+    margin: 1.25rem auto 0;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.breadcrumb span {
+    opacity: 0.5;
+}
+
+/* ==========================================================
+   TITRE DE PAGE
+   ========================================================== */
+.page-title {
+    max-width: var(--container-width);
+    margin: 2.5rem auto 3.5rem;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+
+    text-align: center;
+}
+
+/* ===== TITRE PRINCIPAL ===== */
+.page-title h1 {
+    margin: 0;
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+
+    color: var(--text-main);
+}
+
+/* ===== SOUS-TITRE ===== */
+.page-title p {
+    margin: 0;
+    max-width: 680px;
+
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+
+    color: var(--text-muted);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 768px) {
+    .breadcrumb {
+        font-size: 0.85rem;
+        padding: 0 1.25rem;
+    }
+
+    .page-title {
+        margin: 2rem auto 3rem;
+        padding: 0 1.25rem;
+    }
+}
+
+
+

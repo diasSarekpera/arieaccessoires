@@ -1,0 +1,43 @@
+/* =========================
+   TYPOGRAPHY – ARIES ACCESSOIRE
+========================= */
+
+/* =========================
+   OPTION ACTIVE (RECOMMANDÉE)
+   Cormorant Garamond + Plus Jakarta Sans
+   Luxe discret • Mode • Premium
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* Titres principaux */
+.hero-title, h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Texte global & UI */
+body,
+.nav-list a,
+.btn,
+.stat-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-weight: 400;
+}
+
+/* Navigation & labels */
+.nav-list a,
+.stat-label {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Boutons */
+.btn {
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
