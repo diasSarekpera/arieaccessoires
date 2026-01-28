@@ -1,30 +1,30 @@
 /* ======================================================
-   VARIABLES — LUXE MINIMAL
-   ====================================================== */
+   VARIABLES — IDENTITÉ VISUELLE
+====================================================== */
 :root {
-  --rose-accent: #e2a3b1;       /* rose signature */
-  --rose-soft: rgba(226,163,177,0.15);
+  --accent: #e2a3b1;
+  --accent-soft: rgba(226,163,177,.15);
 
-  --bg-header: rgba(255,255,255,0.88);
-  --border-soft: rgba(0,0,0,0.06);
+  --header-bg: rgba(255,255,255,.86);
+  --header-border: rgba(0,0,0,.06);
 
-  --text-main: #111111;
-  --text-muted: #6e6e6e;
+  --text-main: #111;
+  --text-muted: #6b7280;
 
-  --ease-luxe: cubic-bezier(.4,0,.2,1);
+  --radius-full: 999px;
+  --ease: cubic-bezier(.4,0,.2,1);
 }
 
-
 /* ======================================================
-   HEADER — STRUCTURE GLOBALE
-   ====================================================== */
+   HEADER — BASE
+====================================================== */
 .hero-header {
-  position: sticky;
+  position: fixed; /* sticky permanent */
   top: 0;
-  z-index: 1000;
-
+  left: 0;
   width: 100%;
-  min-height: 92px;
+  height: 92px;
+  z-index: 1000;
 
   display: flex;
   align-items: center;
@@ -32,16 +32,19 @@
 
   padding: 0 3rem;
 
-  background: var(--bg-header);
+  background: var(--header-bg);
   backdrop-filter: blur(18px);
-
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--header-border);
 }
 
+/* Décalage du contenu à cause du fixed header */
+body {
+  padding-top: 92px;
+}
 
 /* ======================================================
    LOGO
-   ====================================================== */
+====================================================== */
 .hero-brand {
   display: flex;
   align-items: center;
@@ -50,18 +53,16 @@
 .brand-img {
   width: 62px;
   height: auto;
-  display: block;
-  transition: transform .3s var(--ease-luxe);
+  transition: transform .3s var(--ease);
 }
 
 .hero-brand:hover .brand-img {
   transform: scale(1.05);
 }
 
-
 /* ======================================================
    NAVIGATION DESKTOP
-   ====================================================== */
+====================================================== */
 .hero-nav {
   flex: 1;
   display: flex;
@@ -70,9 +71,7 @@
 
 .nav-list {
   display: flex;
-  align-items: center;
-  gap: 3.5rem;
-
+  gap: 3.2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -80,145 +79,126 @@
 
 .nav-list a {
   position: relative;
-
   font-size: .72rem;
   letter-spacing: .28em;
   text-transform: uppercase;
   text-decoration: none;
-
-  color: var(--text-main);
   font-weight: 500;
-
-  transition: color .3s var(--ease-luxe);
+  color: var(--text-main);
+  transition: color .3s var(--ease);
 }
 
-/* underline luxe */
 .nav-list a::after {
   content: "";
   position: absolute;
-  left: 50%;
   bottom: -12px;
-
+  left: 50%;
   width: 0;
-  height: 1.5px;
-  background: var(--rose-accent);
-
+  height: 2px;
+  background: var(--accent);
   transform: translateX(-50%);
-  transition: width .3s var(--ease-luxe);
+  transition: width .35s var(--ease);
 }
 
 .nav-list a:hover {
-  color: var(--rose-accent);
+  color: var(--accent);
 }
 
 .nav-list a:hover::after {
   width: 60%;
 }
 
-
 /* ======================================================
-   RÉSEAUX SOCIAUX — DISCRETS
-   ====================================================== */
+   RÉSEAUX SOCIAUX
+====================================================== */
 .hero-socials {
   display: flex;
-  align-items: center;
-  gap: .8rem;
+  gap: .75rem;
 }
 
 .hero-socials a {
   width: 34px;
   height: 34px;
+  border-radius: 50%;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: .9rem;
+  border: 1px solid var(--header-border);
   color: var(--text-main);
-
-  border: 1px solid var(--border-soft);
-  border-radius: 50%;
   background: transparent;
 
-  transition: all .3s var(--ease-luxe);
+  transition: all .3s var(--ease);
 }
 
 .hero-socials a:hover {
-  color: var(--rose-accent);
-  border-color: var(--rose-accent);
-  background: var(--rose-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
-
 /* ======================================================
-   BURGER MENU — FIN & PRO
-   ====================================================== */
+   BURGER MENU
+====================================================== */
 .burger-btn {
   display: none;
+  width: 30px;
+  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
-
-  width: 28px;
-  height: 18px;
   position: relative;
 }
 
 .burger-btn span {
   position: absolute;
   left: 0;
-
   width: 100%;
-  height: 1.6px;
+  height: 2px;
   background: var(--text-main);
   border-radius: 2px;
-
-  transition: transform .3s var(--ease-luxe),
-              opacity .2s var(--ease-luxe);
+  transition: all .3s var(--ease);
 }
 
 .burger-btn span:nth-child(1) { top: 0; }
 .burger-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
 .burger-btn span:nth-child(3) { bottom: 0; }
 
-.burger-btn[aria-expanded="true"] span:nth-child(1) {
+/* Animation burger -> croix */
+body.menu-open .burger-btn span:nth-child(1) {
   top: 50%;
-  transform: translateY(-50%) rotate(45deg);
+  transform: rotate(45deg);
 }
-
-.burger-btn[aria-expanded="true"] span:nth-child(2) {
+body.menu-open .burger-btn span:nth-child(2) {
   opacity: 0;
 }
-
-.burger-btn[aria-expanded="true"] span:nth-child(3) {
+body.menu-open .burger-btn span:nth-child(3) {
   top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
-
 /* ======================================================
-   MENU MOBILE — COLLECTION LUXE
-   ====================================================== */
+   MENU MOBILE — PREMIUM
+====================================================== */
 .mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
-
-  width: 80%;
-  max-width: 340px;
+  width: 82%;
+  max-width: 360px;
   height: 100vh;
 
-  background: #ffffff;
-  box-shadow: 8px 0 40px rgba(0,0,0,0.12);
+  background: #fff;
+  box-shadow: 12px 0 50px rgba(0,0,0,.12);
 
+  padding: 5.5rem 2.6rem;
   transform: translateX(-100%);
-  transition: transform .45s var(--ease-luxe);
+  transition: transform .45s var(--ease);
   z-index: 999;
-
-  padding: 5rem 2.5rem;
 }
 
-.mobile-menu.active {
+body.menu-open .mobile-menu {
   transform: translateX(0);
 }
 
@@ -229,31 +209,43 @@
 
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 2.4rem;
 }
 
 .mobile-nav-list a {
   font-size: .9rem;
-  letter-spacing: .25em;
+  letter-spacing: .26em;
   text-transform: uppercase;
   text-decoration: none;
-
-  color: var(--text-main);
   font-weight: 500;
-
-  transition: color .3s var(--ease-luxe);
+  color: var(--text-main);
+  transition: color .3s var(--ease);
 }
 
 .mobile-nav-list a:hover {
-  color: var(--rose-accent);
+  color: var(--accent);
 }
 
+/* Overlay sombre */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 998;
+}
+
+body.menu-open .menu-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ======================================================
    RESPONSIVE
-   ====================================================== */
+====================================================== */
 @media (max-width: 1024px) {
-
   .hero-nav,
   .hero-socials {
     display: none;
@@ -269,12 +261,15 @@
 }
 
 @media (max-width: 768px) {
+  .hero-header {
+    height: 82px;
+  }
+
+  body {
+    padding-top: 82px;
+  }
 
   .brand-img {
     width: 54px;
-  }
-
-  .hero-header {
-    min-height: 82px;
   }
 }

@@ -1,93 +1,372 @@
-/* ==========================================================
-   PRODUITS — LAYOUT ONLY
-   Barre de catégories + sections produits
-   ========================================================== */
+/* ======================================================
+   VARIABLES GLOBALES
+====================================================== */
+:root {
+  --container-width: 1200px;
 
+  --text-main: #111111;
+  --text-muted: #6b7280;
 
-/* ===== BARRE DE CATÉGORIES ===== */
+  --accent: #e7a1b0;
+  --accent-soft: rgba(231,161,176,0.14);
+
+  --bg-page: #ffffff;
+  --card-bg: rgba(255,255,255,0.92);
+
+  --border-soft: rgba(0,0,0,0.08);
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+
+  --shadow-soft: 0 20px 45px rgba(0,0,0,0.06);
+  --shadow-hover: 0 30px 70px rgba(0,0,0,0.08);
+
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+/* ======================================================
+   FIL D’ARIANE
+====================================================== */
+.breadcrumb {
+  max-width: var(--container-width);
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+
+  font-size: .85rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb span {
+  opacity: .4;
+}
+
+/* ======================================================
+   TITRE DE PAGE
+====================================================== */
+.page-title {
+  max-width: var(--container-width);
+  margin: 3rem auto 2.5rem;
+  padding: 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .6rem;
+}
+
+.page-title h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+}
+
+.page-title p {
+  max-width: 680px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   BARRE DE CATÉGORIES (STICKY)
+====================================================== */
 .categories-bar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-    padding: 0.75rem 2rem;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
 
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  border-bottom: 1px solid var(--border-soft);
+
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+
+  display: flex;
+  justify-content: center;
+  gap: .8rem;
 }
 
 .categories-bar button {
-    background: none;
-    border: none;
-    padding: 0;
+  appearance: none;
+  border: none;
+  background: transparent;
 
-    cursor: pointer;
+  padding: .65rem 1.4rem;
+  border-radius: 999px;
+
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+  cursor: pointer;
+
+  transition:
+    background .3s var(--ease),
+    color .3s var(--ease),
+    transform .3s var(--ease);
 }
 
+.categories-bar button:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
 
-/* ===== CONTENU PRINCIPAL ===== */
+/* ======================================================
+   CONTENU PRINCIPAL
+====================================================== */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-/* ===== SECTION PRODUITS ===== */
+/* ======================================================
+   SECTIONS PRODUITS
+====================================================== */
 .product-section {
-    margin-bottom: 4rem;
+  width: 100%;
+  max-width: var(--container-width);
+  padding: 0 2rem;
+  margin-bottom: 5rem;
 }
 
 .product-section h2 {
-    margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  color: var(--text-main);
 }
 
-
-/* ===== GRILLE PRODUITS ===== */
+/* ======================================================
+   GRILLE PRODUITS
+====================================================== */
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
+/* ======================================================
+   CARTE PRODUIT
+====================================================== */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 
-/* ==========================================================
-   RESPONSIVE — TABLETTE
-   ========================================================== */
+  padding: 2.6rem 2.4rem;
+  min-height: 440px;
 
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.95),
+    rgba(255,255,255,0.85)
+  );
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform .45s var(--ease),
+    box-shadow .45s var(--ease),
+    border-color .45s var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(231,161,176,0.35);
+}
+
+/* ======================================================
+   BADGE
+====================================================== */
+.product-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+
+  padding: .45rem .9rem;
+
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  color: var(--accent);
+  border: 1px solid rgba(231,161,176,0.45);
+}
+
+/* ======================================================
+   HEADER CARTE
+====================================================== */
+.product-card-header {
+  text-align: center;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.product-price {
+  display: block;
+  margin-top: .3rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* ======================================================
+   IMAGE PRODUIT
+====================================================== */
+.product-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-wrapper img {
+  max-width: 85%;
+  height: auto;
+  transition: transform .6s var(--ease);
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+/* ======================================================
+   FOOTER CARTE
+====================================================== */
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.product-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  color: var(--text-main);
+
+  transition: color .3s ease;
+}
+
+.product-whatsapp i {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.product-whatsapp:hover {
+  color: var(--accent);
+}
+
+/* Bouton action */
+.product-action {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(0,0,0,0.6);
+  cursor: pointer;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+.product-action:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 @media (max-width: 1024px) {
-
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-
-/* ==========================================================
-   RESPONSIVE — MOBILE
-   ========================================================== */
 
 @media (max-width: 768px) {
+  .categories-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: .6rem;
+  }
 
-    .categories-bar {
-        justify-content: flex-start;
-        overflow-x: auto;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+  .categories-bar button {
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
 
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
+  .product-card {
+    padding: 2rem 1.6rem;
+  }
 
+  .product-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .product-card-footer {
+    flex-direction: column;
+  }
+
+  .product-whatsapp {
+    width: 100%;
+    justify-content: center;
+    padding: .9rem 1rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+  }
 }

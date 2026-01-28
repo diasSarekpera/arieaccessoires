@@ -1,0 +1,89 @@
+/* ==========================================================
+   BOUTON RETOUR EN HAUT — MODERNE, SOBRE, UI-FIRST
+========================================================== */
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.8rem;
+  z-index: 100;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+
+  color: #111;
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+
+  cursor: pointer;
+
+  /* profondeur douce */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+
+  /* état caché */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.96);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* ==========================================================
+   ÉTAT VISIBLE (AJOUTÉ EN JS)
+========================================================== */
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* ==========================================================
+   HOVER — FEEDBACK CLAIR
+========================================================== */
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  border-color: rgba(231, 161, 176, 0.55);
+
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.14),
+    0 6px 14px rgba(231, 161, 176, 0.25);
+
+  color: var(--accent);
+}
+
+/* ==========================================================
+   ACTIVE / CLICK
+========================================================== */
+
+.back-to-top:active {
+  transform: scale(0.94);
+}
+
+/* ==========================================================
+   FOCUS ACCESSIBILITÉ
+========================================================== */
+
+.back-to-top:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(231, 161, 176, 0.35),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+}

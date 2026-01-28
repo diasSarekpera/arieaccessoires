@@ -1,6 +1,8 @@
 /* RESET CSS */
 @import url("../global/reset.css");
 
+@import url("../global/top-btn.css");
+
 /*================
    BASE
 ==================*/
@@ -20,14 +22,6 @@
    - Menu responsive
 */
 @import url(./01-header.css);
-
-
-/* ===== 02. APRÈS HEADER =====
-   - Fil d’Ariane
-   - Titre de page
-   - Sous-titre
-*/
-@import url("./02-after-header.css");
 
 
 /* ===== 03. PRODUITS =====
