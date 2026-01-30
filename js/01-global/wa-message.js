@@ -14,7 +14,7 @@ ${name}
 Prix : ${price}
 Image : ${image}`;
 
-        const phone = "22954959597";
+        const phone = "22940260611";
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
         window.open(url, "_blank");
