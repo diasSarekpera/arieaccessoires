@@ -370,3 +370,56 @@ main {
     background: var(--accent-soft);
   }
 }
+
+
+/* ======================================================
+   CORRECTIF GRILLE PRODUITS — PLUS LARGE & ÉQUILIBRÉ
+====================================================== */
+
+/* 1. On élargit légèrement la zone produits */
+.product-section {
+  max-width: 1320px; /* au lieu de 1200px */
+  padding: 0 1.2rem; /* bords plus proches */
+}
+
+/* 2. Grille plus dense et moderne */
+.products-grid {
+  gap: 2rem; /* au lieu de 3rem */
+}
+
+/* 3. Cartes un peu plus généreuses */
+.product-card {
+  padding: 2.4rem 2.2rem;
+}
+
+/* 4. Image un peu plus présente */
+.product-image-wrapper img {
+  max-width: 92%; /* au lieu de 85% */
+}
+
+/* ======================================================
+   AJUSTEMENT TABLET
+====================================================== */
+@media (max-width: 1024px) {
+  .product-section {
+    padding: 0 1rem;
+  }
+
+  .products-grid {
+    gap: 1.8rem;
+  }
+}
+
+/* ======================================================
+   MOBILE — FULL WIDTH PROPRE
+====================================================== */
+@media (max-width: 480px) {
+  .product-section {
+    padding: 0 .9rem;
+  }
+
+  .products-grid {
+    gap: 1.8rem;
+  }
+}
+

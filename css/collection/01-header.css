@@ -273,3 +273,81 @@ body.menu-open .menu-overlay {
     width: 54px;
   }
 }
+
+
+/* ================================
+   ANIMATION STAGGER LIEN MENU
+================================= */
+.mobile-nav-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+body.menu-open .mobile-nav-list li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Pour le delay automatique via JS */
+.mobile-nav-list li[data-index] {
+  transition-delay: calc(var(--index) * 0.08s);
+}
+
+/* Swipe hint — optionnel visuel */
+.mobile-menu::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.2);
+}
+
+
+/* ======================================================
+   CORRECTIF MENU MOBILE — ALIGNEMENT & RESPIRATION
+====================================================== */
+
+/* Le menu commence SOUS le header */
+.mobile-menu {
+  top: 92px; /* même hauteur que le header */
+  height: calc(100vh - 92px);
+  padding-top: 3.5rem; /* espace premium en haut */
+}
+
+/* Ajustement mobile si le header est plus petit */
+@media (max-width: 768px) {
+  .mobile-menu {
+    top: 82px;
+    height: calc(100vh - 82px);
+    padding-top: 3rem;
+  }
+}
+
+/* Amélioration visuelle des liens (respiration) */
+.mobile-nav-list {
+  gap: 2.8rem;
+}
+
+/* Petit raffinement : ligne verticale décorative */
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  top: 2.5rem;
+  left: 1.6rem;
+  width: 2px;
+  height: 40px;
+  background: var(--accent);
+  opacity: 0.35;
+  border-radius: 2px;
+}
+
+/* Supprimer le swipe hint trop haut (le repositionner) */
+.mobile-menu::after {
+  top: 1.5rem;
+}
+
